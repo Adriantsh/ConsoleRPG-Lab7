@@ -1,4 +1,5 @@
 #pragma once
+#include "Inventory.h"
 #include <string>
 
 class Player {
@@ -7,15 +8,21 @@ private:
     int health;
     int maxHealth;
     int attackPower;
-
+    Inventory inventory;
 public:
     // constructors and destructor
     Player();
-    Player(std::string, int, int);
+    Player(std::string name, int health, int attackPower);
     ~Player();
 
     // deal damage to player
     void takeDamage(int);
+
+    // show inventory
+    void showInventory() const;
+
+    // add item to inventory
+    void addItem(const Item& item);
 
     // accessors
     std::string getName() const 

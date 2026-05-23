@@ -2,21 +2,25 @@
 
 int main()  {
 
-    // create hero and wizard instances
+    // create hero object
     Player hero;
-    Player wizard("Frog", 120, 15);
 
-    // initial stats
-    hero.displayStatus();
-    wizard.displayStatus();
+    // create three item objects
+    Item item1;
+    Item item2 = Item("Sword", 10);
+    Item item3 = Item("Shield", 15);
 
-    // deal 25 damage to hero
-    hero.takeDamage(25);
-    hero.displayStatus();
+    // add two of them to the hero's inventory
+    hero.addItem(item2);
+    hero.addItem(item3);
+    
+    // display the inventory
+    hero.showInventory();
 
-    // deal 150 damagae to wizard
-    wizard.takeDamage(150);
-    wizard.displayStatus();
+    // report the total items in the inventory
+    std::cout << "Total items add to inventory: ";
+    std::cout << item1.getTotalItems();
+    std::cout << std::endl;
 
     return 0;
 }
